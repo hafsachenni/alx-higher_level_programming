@@ -6,4 +6,4 @@ for a in range(0, 10):
         if h == a:
             continue
         print('{}{}'.format(a, h), end=", ")
-    print('{}{}'.format(a, h))
+print('{}{}'.format(a, h))
