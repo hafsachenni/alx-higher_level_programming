@@ -2,6 +2,6 @@
 if __name__ == "__main__":
     import hidden_4
 
-    module_names = dir(hidden_4)
-    print("Names defined here are:")
-    print(module_names)
+    for module_names in dir(hidden_4):
+        if module_names[:2] != "__":
+             print(module_names)
