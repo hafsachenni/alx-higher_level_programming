@@ -4,4 +4,4 @@ if __name__ == "__main__":
 
     module_names = dir(hidden_4)
     print("Names defined here are:")
-    print("module_names")
+    print(module_names)
