@@ -5,4 +5,6 @@
 class Square:
     """empty class"""
     pass
-square_1=Square()
+
+
+square_1 = Square()
