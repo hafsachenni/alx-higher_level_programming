@@ -1,0 +1,30 @@
+importing the function:
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+
+function that adds 2 ints
+
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(2)
+100
+
+>>> add_integer(100.3, -2)
+98
+
+>>> add_integer(-36, 15)
+-21
+
+>>> add_integer(18, 36)
+54
+
+>>> add_integer(0, 0)
+0
+
+>>> add_integer(56)
+154
