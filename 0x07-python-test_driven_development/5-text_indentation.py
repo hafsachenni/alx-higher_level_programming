@@ -9,5 +9,3 @@ def text_indentation(text):
             continue
         else:
             print("{}".format(text[a]), end="")
-
-
