@@ -2,7 +2,7 @@ import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 class MyTestCase(unittest.TestCase):
-    def no_arg(self):
+    def test_no_arg(self):
         self.assertEqual(max_integer(), None)
 
     def test_max(self):
