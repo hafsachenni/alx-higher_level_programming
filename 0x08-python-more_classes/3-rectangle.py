@@ -44,10 +44,8 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
+
         strrepresentation_rec = ""
         for i in range(self.__height):
             strrepresentation_rec += "#" * self.__width + "\n"
         return strrepresentation_rec[:-1]
-
-    def __repr__(self):
-        return "Rectangle({}, {})".format(self.__width, self.__height)
