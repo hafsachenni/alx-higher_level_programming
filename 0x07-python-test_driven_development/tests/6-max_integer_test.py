@@ -11,6 +11,10 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(max_integer([5, -8, 10]), 10)
         self.assertEqual(max_integer([5.67, 5.66, 5.65]), 5.67)
         self.assertEqual(max_integer([2, 5, 9, 87, 215, 8, 32]), 215)
+        self.assertEqual(max_integer([584579621, 584579622]),  584579622)
         self.assertEqual(max_integer([10, -8, 10, 5, 3]), 10)
+        self.assertEqual(max_integer([-10, -8, -5, -3]), -3)
+
+
     def test_value(self):
         self.assertRaises(TypeError, max_integer(), [5, "hi", 0])
