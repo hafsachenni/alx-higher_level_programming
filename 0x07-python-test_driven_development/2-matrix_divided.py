@@ -1,5 +1,16 @@
 #!/usr/bin/python3
+"""a function that divides all elemnts of a matrix
+matrix must be a list of lists of ints and floats otherwise
+raise typeerror, each row of matrix must be of the same size
+div must be a number otherwise raise typeerror
+div cant be equal to 0 otherwise raise zerodivision error
+All elements of the matrix should be divided by div"""
+
+
 def matrix_divided(matrix, div):
+    """division of the numbers while raising the
+    errors mentioned upwards and returning
+    a new matrix"""
     for el in range(len(matrix)):
         if not isinstance(matrix[el], list):
             raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
