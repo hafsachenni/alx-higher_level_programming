@@ -3,6 +3,8 @@
 size must be an integer, otherwise raise a TypeError
 if size is less than 0, raise a ValueError
 if size is a float and is less than 0, raise a TypeError"""
+
+
 def print_square(size):
     """this function  prints a square with the character #
     size is the size length of the square
@@ -17,4 +19,4 @@ def print_square(size):
     for a in range(size):
         for o in range(size):
             print("#", end="")
-        print()    
+        print()
