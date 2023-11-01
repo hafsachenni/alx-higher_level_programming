@@ -1,3 +1,16 @@
+===========================
+How to use 0-add_integer.py
+===========================
+
+This library only contains one function called ``add_integer(a, b=98)``.
+
+How to use
+==========
+
+```add_integer(...)`` returns the addition of its two arguments. For numbers,
+these is acchived by using the addittion ``+`` operator.
+
+
 importing the function:
 
 >>> add_integer = __import__('0-add_integer').add_integer
