@@ -13,5 +13,3 @@
 >>> my_list.append("alx")
 >>> print(my_list)
 ['hi', 'alx']
-
-to be continued...
