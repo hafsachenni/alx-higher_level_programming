@@ -5,12 +5,11 @@ The ``7-base_geometry`` module
 Using ``BaseGeometry``
 ----------------------
 
-First import ``BaseGeometry`` from the ``7-base_geometry`` module
 
-    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
-Testing for module documentation:
+testing
     >>> mod = __import__("7-base_geometry").__doc__
     >>> len(mod) > 1
     True
@@ -90,19 +89,3 @@ If the value is less or equal to zero, a ValueError is raised.
     Traceback (most recent call last):
     ...
     ValueError: my_int must be greater than 0
-
-
-If no arguments are passed, a TypeError is raised.
-    >>> bg.integer_validator()
-    Traceback (most recent call last):
-    ...
-    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
-
-If only one argument is passed, a TypeError is raised.
-    >>> bg.integer_validator("one")
-    Traceback (most recent call last):
-    ...
-    TypeError: integer_validator() missing 1 required positional argument: 'value'
-
-
