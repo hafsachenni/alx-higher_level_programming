@@ -1,23 +1,31 @@
-The ''1-my_list'' module
+The ``1-my_list`` module
 ========================
 
+Using ``MyList`` 
+----------------
 
-Using ''MyList''
----------------- 
+First import ``MyList`` from the ``1-my_list`` module
+    >>> MyList = __import__('1-my_list').MyList
 
 
->>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList([1, 4, 2, 3, 5])
+>>> my_list.print_sorted()
+[1, 4, 2, 3, 5]
+[1, 2, 3, 4, 5]
+
+>>> my_list = MyList([1, 2, 3, 4, 5])
+>>> print(my_list)
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
 
 >>> my_list = MyList()
->>> print(my_list)
-[]
+>>> my_list.append("Hi and")
+>>> my_list.append("Hello")
+>>> my_list.append("Alx")
+>>> my_list.append("School")
+>>> my_list.append("Python")
+['Hi and', 'Hello', 'Alx', 'School', 'Python']
 
->>> my_list = MyList([2, 5, 6, 8])
->>> print(my_list)
-[2, 5, 6, 8]
-
-
->>> my_list.append("hi")
->>> my_list.append("alx")
->>> print(my_list)
-['hi', 'alx']
+>>> my_list.print_sorted()
+['Alx', 'Hajar', 'Hello', 'Python', 'School']
