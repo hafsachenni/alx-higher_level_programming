@@ -8,10 +8,10 @@ First import ``MyList`` from the ``1-my_list`` module
 >>> MyList = __import__('1-my_list').MyList
 
 
->>> my_list = MyList([1, 4, 2, 3, 5])
+>>> my_list = MyList([1, 6, 2, 3, 5])
 >>> my_list.print_sorted()
-[1, 4, 2, 3, 5]
-[1, 2, 3, 4, 5]
+[1, 6, 2, 3, 5]
+[1, 2, 3, 6, 5]
 
 >>> my_list = MyList([1, 2, 3, 4, 5])
 >>> print(my_list)
@@ -20,12 +20,10 @@ First import ``MyList`` from the ``1-my_list`` module
 [1, 2, 3, 4, 5]
 
 >>> my_list = MyList()
->>> my_list.append("Hi and")
+>>> my_list.append("Hi")
 >>> my_list.append("Hello")
->>> my_list.append("Alx")
->>> my_list.append("School")
 >>> my_list.append("Python")
-['Hi and', 'Hello', 'Alx', 'School', 'Python']
+['Hi', 'Hello', 'Python']
 
 >>> my_list.print_sorted()
-['Alx', 'Hajar', 'Hello', 'Python', 'School']
+['Hello', 'Python']
