@@ -4,7 +4,7 @@
 
 def pascal_triangle(n):
     """
-    Represent Pascal's Triangle of size n.
+    Represent Pascal's Triangle of size n
     """
     if n <= 0:
         return []
