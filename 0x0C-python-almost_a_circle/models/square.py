@@ -15,3 +15,17 @@ class Square(Rectangle):
     def size(self, value):
         self.width = value
         self.height = value
+
+
+    def update(self, *args, **kwargs):
+        if args:
+            arg_list = ["id", "size", "x", "y"]
+            for i, value in enumerate(args):
+                setattr(self, arg_list[i], value)
+        if kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+     
+    def __str__(self):
+         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.height, self.width)
+
