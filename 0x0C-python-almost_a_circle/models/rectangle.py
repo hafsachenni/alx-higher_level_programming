@@ -65,10 +65,27 @@ class Rectangle(Base):
 
 
     def display(self):
+        for a in range(self.y):
+            print()
         for i in range(self.height):
-            print('#' * self.width)
+            print(" " * self.x + "#" * self.width)
 
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}"\
                 .format(self.id, self.x, self.y, self.width, self.height)
+
+
+       
+    def update(self, *args, **kwargs):
+         if args:
+             attr = ["id", "width", "height", "x", "y"]
+             for i, value in enumerate(args):
+                 setattr(self, attr[i], value)
+
+         else:
+             for key, value in kwargs.items():
+                 setattr(self, key, value)
+
+
+                
