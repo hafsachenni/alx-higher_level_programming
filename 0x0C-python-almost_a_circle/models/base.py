@@ -44,3 +44,8 @@ class Base:
         dummy_1.update(**dictionary)
         return dummy_1
 
+
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        to be continued...
+
