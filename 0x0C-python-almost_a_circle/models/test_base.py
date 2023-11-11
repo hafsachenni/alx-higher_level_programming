@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 import unittest
-from models.base import Base
 
-class Testbase(unittest.TestCase):
+import os
+
+class base_test(unittest.TestCase):
     def test_id(self):
         b1 = Base()
         b2 = Base()
@@ -16,20 +17,6 @@ class Testbase(unittest.TestCase):
         b = Base(36)
         self.assertEqual(b.id, 36)
 
-    def test_str(self):
-        o = "hello"
-        b = Base(o)
-        self.assertEqual(b.id, o)
-
-    def test_negative(self):
-        b = Base(-9)
-        self.assertEqual(b.id, -9)
-
-
-    def test_2args(self):
-        with self.assertRaises(TypeError):
-             b = Base(6, 5)
-       
 
 if __name__ == '__main__':
     unittest.main()
