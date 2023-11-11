@@ -7,9 +7,11 @@ class Testbase(unittest.TestCase):
         b1 = Base()
         b2 = Base()
         b3 = Base()
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 3)
+        b4 = Base()
+        self.assertEqual(b1.id, 6)
+        self.assertEqual(b2.id, 7)
+        self.assertEqual(b3.id, 8)
+        self.assertEqual(b4.id, 9)
 
 
     def test_given_id(self):
@@ -32,6 +34,16 @@ class Testbase(unittest.TestCase):
 
     def testfloat(self):
         self.assertEqual(Base(6.4).id, 6.4)
+
+
+    def test0args(self):
+        r1 = Base(None)
+        r2 = Base()
+        r3 = Base()
+        r4 = Base(None)
+        r5 = Base()
+        self.assertEqual(r1.id, r2.id - 1)
+        self.assertEqual(r1.id, r5.id - 4)
        
 
 if __name__ == '__main__':
