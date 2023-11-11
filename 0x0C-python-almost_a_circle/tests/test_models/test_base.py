@@ -29,6 +29,9 @@ class Testbase(unittest.TestCase):
     def test_2args(self):
         with self.assertRaises(TypeError):
              b = Base(6, 5)
+
+    def testfloat(self):
+        self.assertEqual(Base(6.4).id, 6.4)
        
 
 if __name__ == '__main__':
