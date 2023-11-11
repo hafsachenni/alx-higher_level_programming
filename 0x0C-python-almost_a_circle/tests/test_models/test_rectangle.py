@@ -73,6 +73,13 @@ class TestRecatngle(unittest.TestCase):
         self.assertEqual(r3.area(), 56)
 
 
+    def testdisplay(self):
+        r1 = Rectangle(3, 4)
+        with self.assertRaises(TypeError):
+             r1.display(2)
+             to be continued...
+
+
 
 if __name__ == '__main__':
     unittest.main()
