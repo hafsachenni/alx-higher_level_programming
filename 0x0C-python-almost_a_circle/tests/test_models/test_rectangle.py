@@ -62,6 +62,6 @@ class TestRecatngle(unittest.TestCase):
              r9 = Rectangle(8, 9, "hi again", 7)
 
          with self.assertRaisesRegex(TypeError, "y must be an integer"):
-             r10 = Rectangle(8, 3, 2, "and again")
+             r10 = Rectangle(8, 3, 2, "and againn")
 if __name__ == '__main__':
     unittest.main()
