@@ -63,5 +63,16 @@ class TestRecatngle(unittest.TestCase):
 
          with self.assertRaisesRegex(TypeError, "y must be an integer"):
              r10 = Rectangle(8, 3, 2, "and againn")
+
+    def testarea(self):
+        r1 = Rectangle(3, 2)
+        r2 = Rectangle(2, 10)
+        r3 = Rectangle(8, 7, 0, 0, 12)
+        self.assertEqual(r1.area(), 6)
+        self.assertEqual(r2.area(), 20)
+        self.assertEqual(r3.area(), 56)
+
+
+
 if __name__ == '__main__':
     unittest.main()
