@@ -29,6 +29,39 @@ class TestRecatngle(unittest.TestCase):
 
 
 
+    def testint(self):
+         with self.assertRaisesRegex(TypeError, "width must be an integer"):
+             r1 = Rectangle("hi", 4, 5, 8, 9)
 
+          
+         with self.assertRaisesRegex(TypeError, "height must be an integer"):
+             r2 = Rectangle(4, "better")
+
+         with self.assertRaisesRegex(ValueError, "width must be > 0"):
+             r3 = Rectangle(0, 5)
+
+         with self.assertRaisesRegex(ValueError, "height must be > 0"):
+             r4 = Rectangle(5, 0)
+
+         with self.assertRaisesRegex(ValueError, "width must be > 0"):
+             r5 = Rectangle(-9, 5)
+
+
+         with self.assertRaisesRegex(ValueError, "height must be > 0"):
+             r6 = Rectangle(5, -9)
+
+
+         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+             r7 = Rectangle(2, 8, -9)
+
+
+         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+             r8 = Rectangle(8, 6, 5, -9)
+
+         with self.assertRaisesRegex(TypeError, "x must be an integer"):
+             r9 = Rectangle(8, 9, "hi again", 7)
+
+         with self.assertRaisesRegex(TypeError, "y must be an integer"):
+             r10 = Rectangle(8, 3, 2, "and again")
 if __name__ == '__main__':
     unittest.main()
