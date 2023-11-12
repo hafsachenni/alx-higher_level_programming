@@ -77,9 +77,50 @@ class TestRecatngle(unittest.TestCase):
         r1 = Rectangle(3, 4)
         with self.assertRaises(TypeError):
              r1.display(2)
-             to be continued...
+
+    def test_str(self):
+        Base._Base__nb_objects = 0
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        r2 = Rectangle(5, 5, 1)
+        self.assertEqual(r1.__str__(), "[Rectangle] (12) 2/1 - 4/6")
+        self.assertEqual(r2.__str__(), "[Rectangle] (1) 1/0 - 5/5")
+
+    def test_1_arg_str(self):
+        r1 = Rectangle(4, 6, 2, 1, 18)
+        with self.assertRaises(TypeError):
+            r1.__str__(4)
+
+
+    def test_update(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        '''testing only with id'''
+        r1.update(89)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 10/10")
+        
+        '''test with id + width'''
+        r1.update(89, 9)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 9/10")
+
+        ''' + height'''
+        r1.update(89, 9, 8)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 9/8")
+
+        '''testing all atrr'''
+        r1.update(89, 9, 8, 4, 5)
+        self.assertEqual(r1.__str__(),  "[Rectangle] (89) 4/5 - 9/8")
+
+
+        '''testing update several amount of times'''
+        r1.update(78)
+        r1.update(85)
+        r1.update(54)
+        self.assertEqual(r1.__str__(), "[Rectangle] (54) 4/5 - 9/8")
 
 
 
+   def test_update_withkwargs(self):
+       r1 =  Rectangle(10, 10, 10, 10)
+       r1.update(height=1)
+       self.assertEqual(r1.__str__(), "[Rectangle] (1) 10/10 - 10/1")
 if __name__ == '__main__':
     unittest.main()
