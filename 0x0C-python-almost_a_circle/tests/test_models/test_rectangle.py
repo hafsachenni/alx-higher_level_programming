@@ -139,6 +139,9 @@ class TestRecatngle(unittest.TestCase):
         r1.update(id=14, width=8, height=4, x=2, y=3)
         self.assertEqual(r1.__str__(), "[Rectangle] (14) 2/3 - 8/4")
 
-        to be continued...
 if __name__ == '__main__':
     unittest.main()
+
+
+
+        to be continued...
