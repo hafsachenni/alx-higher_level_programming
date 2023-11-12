@@ -141,7 +141,3 @@ class TestRecatngle(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-
-        to be continued...
