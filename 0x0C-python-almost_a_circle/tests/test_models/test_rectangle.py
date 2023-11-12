@@ -118,9 +118,26 @@ class TestRecatngle(unittest.TestCase):
 
 
 
-   def test_update_withkwargs(self):
-       r1 =  Rectangle(10, 10, 10, 10)
-       r1.update(height=1)
-       self.assertEqual(r1.__str__(), "[Rectangle] (1) 10/10 - 10/1")
+    def test_update_withkwargs(self):
+        r1 =  Rectangle(10, 10, 10, 10, 10)
+        r1.update(id=14)
+        self.assertEqual(r1.__str__(), "[Rectangle] (14) 10/10 - 10/10")
+        '''test with 2kwargs'''
+        r1.update(id=14, width=8)
+        self.assertEqual(r1.__str__(), "[Rectangle] (14) 10/10 - 8/10")
+
+        '''3kwargs'''
+        r1.update(id=14, width=8, height=4)
+        self.assertEqual(r1.__str__(), "[Rectangle] (14) 10/10 - 8/4")
+
+        '''4kwags'''
+        r1.update(id=14, width=8, height=4, x = 2)
+        self.assertEqual(r1.__str__(), "[Rectangle] (14) 2/10 - 8/4")
+
+
+        '''5kwargs'''
+        r1.update(id=14, width=8, height=4, x=2, y=3)
+        self.assertEqual(r1.__str__(), "[Rectangle] (14) 2/3 - 8/4")
+
 if __name__ == '__main__':
     unittest.main()
