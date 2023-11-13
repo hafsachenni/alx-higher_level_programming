@@ -20,7 +20,7 @@ class Rectangle(Base):
     '''width atrr setter'''
     @width.setter
     def width(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -34,7 +34,7 @@ class Rectangle(Base):
     '''height attr setter'''
     @height.setter
     def height(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -48,7 +48,7 @@ class Rectangle(Base):
     '''x attr setter'''
     @x.setter
     def x(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -62,7 +62,7 @@ class Rectangle(Base):
     '''y attr setter'''
     @y.setter
     def y(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
@@ -84,23 +84,22 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}"\
                 .format(self.id, self.x, self.y, self.width, self.height)
 
-    '''methos that assigns a key/value args to attr'''
+    '''method that assigns a key/value args to attr'''
     def update(self, *args, **kwargs):
-         if args:
-             attr = ["id", "width", "height", "x", "y"]
-             for i, value in enumerate(args):
-                 setattr(self, attr[i], value)
-
-         else:
-             for key, value in kwargs.items():
-                 setattr(self, key, value)
+        if args:
+            attr = ["id", "width", "height", "x", "y"]
+            for i, value in enumerate(args):
+                setattr(self, attr[i], value)
+            else:
+                for key, value in kwargs.items():
+                    setattr(self, key, value)
 
     '''returns the dictionary represenation of the rectangle'''
     def to_dictionary(self):
         return {
-                'x': self.__x,
-                'y': self.__y,
-                'id': self.id,
-                'height': self.__height,
-                'width': self.__width
-                }
+            'x': self.__x,
+            'y': self.__y,
+            'id': self.id,
+            'height': self.__height,
+            'width': self.__width
+        }
