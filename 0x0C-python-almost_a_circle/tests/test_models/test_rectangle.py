@@ -1,10 +1,16 @@
 #!/usr/bin/python3
+'''
+unittest for rectangle
+'''
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
 
+
 class TestRecatngle(unittest.TestCase):
+    '''tests for rectangle class'''
     def test_id_rec(self):
+        '''tests for rectangle class'''
          r1 = Rectangle(10, 2)
          r2 = Rectangle(2, 10)
          self.assertEqual(r1.width, 10)
@@ -12,8 +18,8 @@ class TestRecatngle(unittest.TestCase):
          self.assertEqual(r1.x, 0)
          self.assertEqual(r1.y, 0)
 
-
     def test_all_arg(self):
+        '''tests all args'''
         r1 = Rectangle(45, 8, 0, 0, 9)
         self.assertEqual(r1.x, 0)
         self.assertEqual(r1.height, 8)
@@ -24,12 +30,14 @@ class TestRecatngle(unittest.TestCase):
       
 
     def test_extra(self):
+       '''test extra args'''
        with self.assertRaises(TypeError):
            r1 = Rectangle(5, 9, 0, 0, 85, 75)
 
 
 
     def testint(self):
+         '''test other types'''
          with self.assertRaisesRegex(TypeError, "width must be an integer"):
              r1 = Rectangle("hi", 4, 5, 8, 9)
 
@@ -65,6 +73,7 @@ class TestRecatngle(unittest.TestCase):
              r10 = Rectangle(8, 3, 2, "and againn")
 
     def testarea(self):
+        '''test area'''
         r1 = Rectangle(3, 2)
         r2 = Rectangle(2, 10)
         r3 = Rectangle(8, 7, 0, 0, 12)
@@ -74,11 +83,13 @@ class TestRecatngle(unittest.TestCase):
 
 
     def testdisplay(self):
+        '''test #'''
         r1 = Rectangle(3, 4)
         with self.assertRaises(TypeError):
              r1.display(2)
 
     def test_str(self):
+        '''test str repre'''
         Base._Base__nb_objects = 0
         r1 = Rectangle(4, 6, 2, 1, 12)
         r2 = Rectangle(5, 5, 1)
@@ -86,12 +97,14 @@ class TestRecatngle(unittest.TestCase):
         self.assertEqual(r2.__str__(), "[Rectangle] (1) 1/0 - 5/5")
 
     def test_1_arg_str(self):
+        '''test 1arg'''
         r1 = Rectangle(4, 6, 2, 1, 18)
         with self.assertRaises(TypeError):
             r1.__str__(4)
 
 
     def test_update(self):
+        '''test update method'''
         r1 = Rectangle(10, 10, 10, 10)
         '''testing only with id'''
         r1.update(89)
@@ -119,7 +132,8 @@ class TestRecatngle(unittest.TestCase):
 
 
     def test_update_withkwargs(self):
-        r1 =  Rectangle(10, 10, 10, 10, 10)
+        '''test with kwargs'''
+        r1 = Rectangle(10, 10, 10, 10, 10)
         r1.update(id=14)
         self.assertEqual(r1.__str__(), "[Rectangle] (14) 10/10 - 10/10")
         '''test with 2kwargs'''
