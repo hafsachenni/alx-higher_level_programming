@@ -71,7 +71,7 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-         '''method that returns the area of the rectangle'''
+        '''method that returns the area of the rectangle'''
         return self.__width * self.__height
 
     def display(self):
@@ -83,8 +83,8 @@ class Rectangle(Base):
 
     def __str__(self):
         '''method that prints the str representation'''
-        return "[Rectangle] ({}) {}/{} - {}/{}"\
-                .format(self.id, self.x, self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+             self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         '''method that assigns a key/value args to attr'''
@@ -92,9 +92,9 @@ class Rectangle(Base):
             attr = ["id", "width", "height", "x", "y"]
             for i, value in enumerate(args):
                 setattr(self, attr[i], value)
-            else:
-                for key, value in kwargs.items():
-                    setattr(self, key, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def to_dictionary(self):
         '''returns the dictionary represenation of the rectangle'''
