@@ -6,26 +6,31 @@ import os
 
 
 class Base:
+    '''base class'''
+
     __nb_objects = 0
 
-    '''class atrributes'''
     def __init__(self, id=None):
+        '''The class constructor
+        Args:
+            id (int, optional): The id of the object
+            '''
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-    '''returns the JSON string representation of list_dictionaries'''
     @staticmethod
     def to_json_string(list_dictionaries):
+        '''returns the JSON string representation'''
         if not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
 
-    '''method that writes the json representation to a file'''
     @classmethod
     def save_to_file(cls, list_objs):
+        '''method that writes the json representation to a file'''
         if not list_objs:
             list_objs = []
         filename = cls.__name__ + ".json"
@@ -34,24 +39,24 @@ class Base:
                                              for obj in list_objs])
             file.write(json_string)
 
-    '''method that returns the list of json representation'''
     @staticmethod
     def from_json_string(json_string):
+        '''method that returns the list of json representation'''
         if json_string is None:
             return []
         else:
             return json.loads(json_string)
 
-    '''returns an instance with all atrributes'''
     @classmethod
     def create(cls, **dictionary):
+        '''returns an instance with all atrributes'''
         dummy_1 = cls(1, 1)
         dummy_1.update(**dictionary)
         return dummy_1
 
-    '''returns a list of all instances'''
     @classmethod
     def load_from_file(cls):
+        '''returns a list of all instances'''
         filename = cls.__name__ + ".json"
         try:
             with open(filename, "r", encoding="utf-8") as file:
