@@ -11,8 +11,8 @@ class Square(Rectangle):
 
     def __str__(self):
         '''str representation of the square'''
-        return "[Square] ({}) {}/{} - {}"\
-                .format(self.id, self.x, self.y, self.height, self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.height, self.width)
 
     @property
     def size(self):
@@ -26,7 +26,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-         '''methods that assign attr'''
+        '''methods that assign attr'''
         if args:
             arg_list = ["id", "size", "x", "y"]
             for i, value in enumerate(args):
@@ -37,8 +37,8 @@ class Square(Rectangle):
 
     def __str__(self):
         '''str representation'''
-        return "[Square] ({}) {}/{} - {}"\
-                .format(self.id, self.x, self.y, self.height, self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.height, self.width)
 
     def to_dictionary(self):
         '''method that returns the dic representation'''
