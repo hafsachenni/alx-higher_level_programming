@@ -83,23 +83,18 @@ class TestRecatngle(unittest.TestCase):
 
     def test_update(self):
         r1 = Rectangle(10, 10, 10, 10)
-        '''testing only with id'''
         r1.update(89)
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 10/10")
 
-        '''test with id + width'''
         r1.update(89, 9)
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 9/10")
 
-        ''' + height'''
         r1.update(89, 9, 8)
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 9/8")
 
-        '''testing all atrr'''
         r1.update(89, 9, 8, 4, 5)
         self.assertEqual(r1.__str__(),  "[Rectangle] (89) 4/5 - 9/8")
 
-        '''testing update several amount of times'''
         r1.update(78)
         r1.update(85)
         r1.update(54)
@@ -109,19 +104,16 @@ class TestRecatngle(unittest.TestCase):
         r1 = Rectangle(10, 10, 10, 10, 10)
         r1.update(id=14)
         self.assertEqual(r1.__str__(), "[Rectangle] (14) 10/10 - 10/10")
-        '''test with 2kwargs'''
+
         r1.update(id=14, width=8)
         self.assertEqual(r1.__str__(), "[Rectangle] (14) 10/10 - 8/10")
 
-        '''3kwargs'''
         r1.update(id=14, width=8, height=4)
         self.assertEqual(r1.__str__(), "[Rectangle] (14) 10/10 - 8/4")
 
-        '''4kwags'''
         r1.update(id=14, width=8, height=4, x=2)
         self.assertEqual(r1.__str__(), "[Rectangle] (14) 2/10 - 8/4")
 
-        '''5kwargs'''
         r1.update(id=14, width=8, height=4, x=2, y=3)
         self.assertEqual(r1.__str__(), "[Rectangle] (14) 2/3 - 8/4")
 
