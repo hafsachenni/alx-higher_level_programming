@@ -5,6 +5,7 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    '''class that represents a square'''
     def __init__(self, size, x=0, y=0, id=None):
         '''defining attr of the square class'''
         super().__init__(size, size, x, y, id)
