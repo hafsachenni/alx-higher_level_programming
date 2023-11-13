@@ -2,6 +2,7 @@
 '''base class of all child classes'''
 
 import json
+import os
 
 
 class Base:
