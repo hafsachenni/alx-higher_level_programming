@@ -1,9 +1,7 @@
 #!/usr/bin/node
-const numArguments = process.argv.length - 2;
-if (numArguments === 0) {
+const numArguments = process.argv.slice(2);// slices used to extract cmd line ars //
+if (!numArguments) {
   console.log('No argument');
-} else if (numArguments === 1) {
-  console.log('School');
-} else if (numArguments > 1) {
-  console.log('Arguments found');
+} else {
+  console.log(numArguments[0]);
 }
