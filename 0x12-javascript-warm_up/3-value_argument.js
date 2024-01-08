@@ -1,7 +1,7 @@
 #!/usr/bin/node
-const numArguments = process.argv.slice(2);// slices used to extract cmd line ars //
+const numArguments = process.argv[2];// extract cmd line args //
 if (!numArguments) {
   console.log('No argument');
 } else {
-  console.log(numArguments[0]);
+  console.log(numArguments);
 }
