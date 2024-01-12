@@ -13,13 +13,13 @@ if __name__ == "__main__":
     engine = create_engine(
             'mysql+mysqldb://{}:{}@localhost/{}'
             .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    natijat = session.query(State).filter(State.name.like(sys.argv[4]))
+    natijat = session.query(State).filter(State.name.like(sys.argv[4])).first()
 
-    if not natijat.all():
+    if not natijat:
         print("Not Found")
     else:
-        for natija in natijat:
-            print('{}'.format(natija.id))
+        print(natijat.id)
