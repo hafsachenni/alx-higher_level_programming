@@ -17,8 +17,7 @@ if __name__ == "__main__":
             )
 
     mycursor = mydb.cursor()
-    query = """SELECT GROUP_CONCAT(cities.name
-    ORDER BY cities.id ASC SEPARATOR ', ')
+    query = """SELECT cities.name
     FROM cities
     JOIN states ON cities.state_id = states.id
     WHERE states.name = %s;
