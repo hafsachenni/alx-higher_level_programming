@@ -24,3 +24,6 @@ if __name__ == "__main__":
 
     for result in myresult:
         print(result)
+
+    mycursor.close()
+    mydb.close()
