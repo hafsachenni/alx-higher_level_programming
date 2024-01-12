@@ -25,5 +25,5 @@ if __name__ == "__main__":
     """
     mycursor.execute(query, (sys.argv[4],))
     myresult = mycursor.fetchall()
-
-    print(", ".join(city[0] for city in myresult))
+    city = ", ".join(city[0] for city in myresult)
+    print(city)
