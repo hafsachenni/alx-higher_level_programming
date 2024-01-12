@@ -22,4 +22,5 @@ if __name__ == "__main__":
     myresult = mycursor.fetchall()
 
     for result in myresult:
-        print(result)
+        if result[1][0] == 'N':
+            print(result)
