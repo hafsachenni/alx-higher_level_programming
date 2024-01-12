@@ -23,7 +23,5 @@ if __name__ == "__main__":
     myresult = mycursor.fetchall()
 
     for result in myresult:
-        print(result)
-
-    mycursor.close()
-    mydb.close()
+        if result[1] == sys.argv[4]:
+            print(result)
