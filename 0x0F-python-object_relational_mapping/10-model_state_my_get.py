@@ -20,6 +20,6 @@ if __name__ == "__main__":
     natijat = session.query(State).filter(State.name.like(sys.argv[4])).first()
 
     if not natijat:
-        print("Not Found")
+        print("Not found")
     else:
         print(natijat.id)
