@@ -17,5 +17,8 @@ if __name__ == "__main__":
     session = Session()
 
     states = session.query(State).filter(State.name == 'California')
+
+    if states is None:
+        print(Nothing)
     for state in states:
         print("{}: {}".format(state.id, state.name))
