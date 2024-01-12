@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
- lists all State objects from the database
- hbtn_0e_6_usa
- """
+script that prints the State object with the name
+passed as argument from the database hbtn_0e_6_usa
+"""
+
 from sqlalchemy import create_engine
 import sys
 from sqlalchemy.orm import sessionmaker
