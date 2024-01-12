@@ -16,9 +16,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).filter(State.name == 'California')
+    natija = session.query(State).filter(State.name == 'California').first()
 
-    if states is None:
-        print(Nothing)
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
+    if natija is None:
+        print("Nothing")
+    else:
+        print("{}: {}".format(natija.id, natija.name))
