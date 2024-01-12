@@ -17,7 +17,8 @@ if __name__ == "__main__":
             )
 
     mycursor = mydb.cursor()
-    query = "SELECT *FROM states WHERE name = '{}'".format(sys.argv[4])
+    query = "SELECT *FROM states WHERE name = '{}'\
+            ORDER by states.id ASC".format(sys.argv[4])
     mycursor.execute(query)
     myresult = mycursor.fetchall()
 
