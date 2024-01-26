@@ -6,8 +6,8 @@ import urllib.request
 
 
 if __name__ == "__main__":
-    response = urllib.request.urlopen("https://alx-intranet.hbtn.io/status")
-    me = response.read()
+    with urllib.request.urlopen("https://alx-intranet.hbtn.io/status") as response:
+        me = response.read()
     print('Body Response:')
     print("\t- type: {}".format(type(me)))
     print('\t- content: {}'.format(me))
