@@ -2,9 +2,14 @@
 """bash script that sends a POST request"""
 import urllib.request
 import sys
+import urllib.parse
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    data = {'email': sys.argv[2]}
-    with urllib.request.Request(url, data) as res:
-        print(res.read())
+    value = {'email': sys.argv[2]}
+    """encoding the data"""
+    data = urllib.parse.urlencode(value).encode("utf-8")
+    request = urllib.request.Request(url, data=data, method='POST')
+    with urllib.request.Request(request) as res:
+        alo = res.read())
+        print(alo.decode("utf-8")
