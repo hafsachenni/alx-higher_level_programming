@@ -10,4 +10,4 @@ if __name__ == "__main__":
         response.raise_for_status()
         print(response.text)
     except requests.exceptions.HTTPError as chaditak:
-        print("Error code:", chaditak.status_code)
+        print("Error code:", chaditak.response.status_code)
