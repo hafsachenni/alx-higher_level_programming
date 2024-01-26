@@ -6,5 +6,5 @@ import sys
 
 if __name__ == "__main__":
     response = requests.get(sys.argv[1])
-    alo = response.headers["X-Request-Id"]
+    alo = response.headers.get("X-Request-Id")
     print(alo)
