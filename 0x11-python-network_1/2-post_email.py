@@ -10,6 +10,6 @@ if __name__ == "__main__":
     """encoding the data"""
     data = urllib.parse.urlencode(value).encode("utf-8")
     request = urllib.request.Request(url, data=data, method='POST')
-    with urllib.request.Request(request) as res:
+    with urllib.request.urlopen(request) as res:
         alo = res.read())
         print(alo.decode("utf-8")
