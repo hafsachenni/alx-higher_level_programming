@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// script that prints the number of movies where the character “Wedge Antilles” is present
 const apiUrl = process.argv[2];
 const charId = 18;
 
