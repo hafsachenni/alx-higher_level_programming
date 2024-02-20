@@ -13,7 +13,7 @@ request.get(apiUrl, function (error, response, body) {
 
     let count = 0;
     for (const result of res) {
-        // loop aala results and fetch characters
+      // loop aala results and fetch characters
       const filmschars = result.characters;
 
       for (const film of filmschars) {
