@@ -14,7 +14,7 @@ request.get(apiUrl, function (error, response, body) {
       const filmschars = result.characters;
 
       for (const film of filmschars) {
-        if (film.includes(`/${charId}/`)) {
+        if (film.includes(charId)) {
           count++;
         }
       }
