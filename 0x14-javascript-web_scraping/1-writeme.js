@@ -4,5 +4,5 @@ const pathTofile = process.argv[2];
 const stringTowrite = process.argv[3];
 const fs = require('fs');
 fs.writeFile(pathTofile, stringTowrite,'utf-8', function(error) {
-    console.error(error);
+    if (error) console.error(error);
 });
