@@ -15,6 +15,8 @@ request.get(url, function (error, response, body) {
   // iterating through each task
   for (const task of todos) {
     if (task.completed) {
+      // if count already exists it takes current count
+      // if not, it uses 0 as default value, and increments count by 1
       completedTasks[task.userId] = (completedTasks[task.userId] || 0) + 1;
     }
   }
